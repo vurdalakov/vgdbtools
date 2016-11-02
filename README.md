@@ -1,5 +1,5 @@
-﻿# VisualGDB Tools
-zz
+# VisualGDB Tools
+
 ### Overview
 
 **VisualGDB Tools** is a small Visual Studio extension that makes using [VisualGDB](http://visualgdb.com/) easier.
@@ -12,7 +12,7 @@ Supported Visual Studio 2015 Editions:
 
 ### Install
 
-##### Install from the Visual Studio Gallery
+##### Install from the [Visual Studio Gallery](https://visualstudiogallery.msdn.microsoft.com/57deef7a-72d5-4a47-9b1b-14eb76935c7c)
 
 1. In Visual Studio, on the `Tools menu`, click `Extensions and Updates`.
 1. Click `Online` and then search for `VisualGDB Tools`. The listing for the `VisualGDB Tools` extension should appear.
