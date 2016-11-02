@@ -1,21 +1,37 @@
 ﻿# VisualGDB Tools
-
+zz
 ### Overview
 
-**vgdbtools** is a small Visual Studio extension that makes using [VisualGDB](http://visualgdb.com/) easier.
+**VisualGDB Tools** is a small Visual Studio extension that makes using [VisualGDB](http://visualgdb.com/) easier.
 
 So far only one command exists that allows to change remote connection for all projects in a solution at once.
 
+Supported Visual Studio 2015 Editions:
+* Visual Studio 2015
+* Visual Studio 2015 Community
+
 ### Install
 
-* Download `vgdbtools.zip` package from [here](http://cdn.vurdalakov.net/files/vgdbtools/vgdbtools_1_00.zip).
-* Unpack it to any location.
-* Double-click the `vgdbtools.vsix` file and follow instructions.
+##### Install from the Visual Studio Gallery
 
-### Use
+1. In Visual Studio, on the `Tools menu`, click `Extensions and Updates`.
+1. Click `Online` and then search for `VisualGDB Tools`. The listing for the `VisualGDB Tools` extension should appear.
+1. Click `Download`. After the extension is downloaded, click `Install`.
+1. To complete the installation, restart Visual Studio.
 
-* In `Tools` menu, open `VisualGDB Tools` submenu and click `Change Remote Connection...` menu item.
-* Select required connection from the combobox and click `OK`.
+##### Install manually
+
+1. Download `vgdbtools.zip` package from [here](http://cdn.vurdalakov.net/files/vgdbtools/vgdbtools_1_00.zip).
+1. Unpack it to any location.
+1. Double-click the `vgdbtools.vsix` file and follow instructions.
+1. To complete the installation, restart Visual Studio.
+
+### Usage
+
+1. In `Tools` menu, open `VisualGDB Tools` submenu and click `Change Remote Connection...` menu item.
+1. Select required connection from the combobox and click `OK`.
+
+![VisualGDB Tools, Change Remote Connection command](https://raw.githubusercontent.com/vurdalakov/vgdbtools/master/img/screenshot3.png)
 
 ![VisualGDB Tools, Change Remote Connection command](https://raw.githubusercontent.com/vurdalakov/vgdbtools/master/img/screenshot1.png)
 ![VisualGDB Tools, Change Remote Connection command](https://raw.githubusercontent.com/vurdalakov/vgdbtools/master/img/screenshot2.png)
@@ -24,8 +40,8 @@ So far only one command exists that allows to change remote connection for all p
 
 ###### How to add a new remote connection?
 
-* Add a new remote connection in any project using ``
-* Use `Change Remote Connection...` command of `VisualGDB Tools` to change all other projects to the new connection.
+1. Add a new remote connection in any project using `VisualGDB Project Properties` dialog.
+1. Use `Change Remote Connection...` command of `VisualGDB Tools` to change all other projects to the new connection.
 
 ### History
 
@@ -40,6 +56,8 @@ Distributed under the terms of the [MIT license](https://opensource.org/licenses
 ### Disclaimer
 
 This project is not associated with nor sponsored by [VisualGDB](http://visualgdb.com/) nor [Sysprogs OÜ](http://sysprogs.com/).
+
+All product names, logos, and brands are property of their respective owners and are cited herein for identification purposes only.
 
 ```
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR 

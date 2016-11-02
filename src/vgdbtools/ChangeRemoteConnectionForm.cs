@@ -32,7 +32,7 @@
         {
             for (var i = 0; i < this.comboBoxConnection.Items.Count; i++)
             {
-                if (this.comboBoxConnection.Items.Equals(connection))
+                if (this.comboBoxConnection.Items[i].Equals(connection))
                 {
                     this.comboBoxConnection.SelectedIndex = i;
                     return;
