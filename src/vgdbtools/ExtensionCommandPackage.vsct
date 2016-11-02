@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <Extern href="stdidcmd.h"/>
+  <Extern href="vsshlids.h"/>
+
+  <Commands package="guidExtensionCommandPackage">
+
+    <Menus>
+      <Menu guid="guidExtensionCommandSet" id="idExtensionMenu" priority="0x0100" type="Menu">
+        <Parent guid="guidSHLMainMenu" id="IDG_VS_TOOLS_OTHER2"/>
+        <Strings>
+          <ButtonText>VisualGDB Tools</ButtonText>
+          <CommandName>VisualGDB Tools</CommandName>
+        </Strings>
+      </Menu>
+    </Menus>
+
+    <Groups>
+      <Group guid="guidExtensionCommandSet" id="idExtensionMenuGroup" priority="0x0600">
+        <Parent guid="guidExtensionCommandSet" id="idExtensionMenu"/>
+      </Group>
+    </Groups>
+
+    <Buttons>
+      <Button guid="guidExtensionCommandSet" id="idChangeRemoteConnectionCommand" priority="0x0100" type="Button">
+        <Parent guid="guidExtensionCommandSet" id="idExtensionMenuGroup" />
+        <Icon guid="guidExtensionImages" id="idChangeRemoteConnectionCommandImage" />
+        <Strings>
+          <ButtonText>Change Remote Connection...</ButtonText>
+        </Strings>
+      </Button>
+    </Buttons>
+
+    <Bitmaps>
+      <Bitmap guid="guidExtensionImages" href="Resources\ExtensionCommandSet.png" usedList="idChangeRemoteConnectionCommandImage, idCommand2Image, idCommand3Image, idCommand4Image, idCommand5Image, idCommand6Image"/>
+    </Bitmaps>
+  </Commands>
+
+  <Symbols>
+    <GuidSymbol name="guidExtensionCommandPackage" value="{cacd46ba-c111-446a-8e30-ce6e9574d9a7}" />
+
+    <GuidSymbol name="guidExtensionCommandSet" value="{4f218abc-b325-4fd0-9eec-a99b51612e8f}">
+      <IDSymbol name="idExtensionMenu" value="0x1100"/>
+      <IDSymbol name="idExtensionMenuGroup" value="0x1250"/>
+      <IDSymbol name="idChangeRemoteConnectionCommand" value="0x0105"/>
+    </GuidSymbol>
+
+    <GuidSymbol name="guidExtensionImages" value="{34edd247-c1dd-4048-b105-86f047f6349e}" >
+      <IDSymbol name="idChangeRemoteConnectionCommandImage" value="1" />
+      <IDSymbol name="idCommand2Image" value="2" />
+      <IDSymbol name="idCommand3Image" value="3" />
+      <IDSymbol name="idCommand4Image" value="4" />
+      <IDSymbol name="idCommand5Image" value="5" />
+      <IDSymbol name="idCommand6Image" value="6" />
+    </GuidSymbol>
+  </Symbols>
+  
+</CommandTable>

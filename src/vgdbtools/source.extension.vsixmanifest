@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
+  <Metadata>
+    <Identity Id="Vurdalakov.vgdbtools.d8315892-69c3-48bb-a35c-0bfdd273f196" Version="1.0" Language="en-US" Publisher="Vurdalakov" />
+    <DisplayName>VisualGDB Tools</DisplayName>
+    <Description xml:space="preserve">A Visual Studio extension that makes using VisualGDB easier. For example, it allows to change remote connection for all projects in a solution at once.</Description>
+    <MoreInfo>https://github.com/vurdalakov/vgdbtools</MoreInfo>
+    <License>license.txt</License>
+    <Icon>Resources\ExtensionCommandPackage.ico</Icon>
+    <Tags>VisualGDB</Tags>
+  </Metadata>
+  <Installation>
+    <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[14.0]" />
+  </Installation>
+  <Dependencies>
+    <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.5,)" />
+    <Dependency Id="Microsoft.VisualStudio.MPF.14.0" DisplayName="Visual Studio MPF 14.0" d:Source="Installed" Version="[14.0]" />
+  </Dependencies>
+  <Assets>
+    <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
+  </Assets>
+</PackageManifest>
