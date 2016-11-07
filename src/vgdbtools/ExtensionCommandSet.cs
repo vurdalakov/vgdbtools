@@ -102,6 +102,41 @@
             return fileNames.ToArray();
         }
 
+        private String GetConnectionFromFile(String fileName)
+        {
+            var hostName = "";
+            var userName = "";
+
+            using (var streamReader = File.OpenText(fileName))
+            {
+                while (!streamReader.EndOfStream)
+                {
+                    var line = streamReader.ReadLine();
+
+                    var match = Regex.Match(line, "<HostName>(.*)</HostName>");
+                    if (match.Success && (2 == match.Groups.Count))
+                    {
+                        hostName = match.Groups[1].Value;
+                    }
+                    else
+                    {
+                        match = Regex.Match(line, "<UserName>(.*)</UserName>");
+                        if (match.Success && (2 == match.Groups.Count))
+                        {
+                            userName = match.Groups[1].Value;
+                        }
+                    }
+
+                    if (!String.IsNullOrEmpty(hostName) && !String.IsNullOrEmpty(userName))
+                    {
+                        return String.Format("{0}@{1}", userName, hostName);
+                    }
+                }
+            }
+
+            return null;
+        }
+
         private String[] GetExistingConnections()
         {
             var connections = new List<String>();
@@ -111,44 +146,24 @@
 
             foreach (var fileName in fileNames)
             {
-                connections.Add(Path.GetFileNameWithoutExtension(fileName));
+                var connection = GetConnectionFromFile(fileName);
+                if (!String.IsNullOrEmpty(connection))
+                {
+                    connections.Add(connection);
+                }
             }
 
             return connections.ToArray();
         }
 
-        private String GetCurrentConnection(String[] fileNames)
+        private String GetCurrentConnection(String[] fileNames) // TODO: from current project
         {
-            var hostName = "";
-            var userName = "";
-
             foreach (var fileName in fileNames)
             {
-                using (var streamReader = File.OpenText(fileName))
+                var connection = GetConnectionFromFile(fileName);
+                if (!String.IsNullOrEmpty(connection))
                 {
-                    while (!streamReader.EndOfStream)
-                    {
-                        var line = streamReader.ReadLine();
-
-                        var match = Regex.Match(line, "<HostName>(.*)</HostName>");
-                        if (match.Success && (2 == match.Groups.Count))
-                        {
-                            hostName = match.Groups[1].Value;
-                        }
-                        else
-                        {
-                            match = Regex.Match(line, "<UserName>(.*)</UserName>");
-                            if (match.Success && (2 == match.Groups.Count))
-                            {
-                                userName = match.Groups[1].Value;
-                            }
-                        }
-
-                        if (!String.IsNullOrEmpty(hostName) && !String.IsNullOrEmpty(userName))
-                        {
-                            return String.Format("{0}@{1}", userName, hostName);
-                        }
-                    }
+                    return connection;
                 }
             }
 
